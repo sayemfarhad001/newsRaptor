@@ -17,7 +17,12 @@ export class Navbar extends Component {
       <div>
         <nav className={`navbar navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode} text-${this.props.mode==='light'?'dark':'light'}`}>
             <div className="container-fluid">
-                <Link className="navbar-brand" to="/">NewsRaptor</Link>
+                <Link className="navbar-brand" to="/">
+                    <div className='d-flex'>
+                        <img className="border border-dark rounded-circle mx-2" src="/android-chrome-512x512.png" alt="NewsRaptor" width="50" height="50"/>
+                        <h1><strong>NewsRaptor</strong></h1>
+                    </div>
+                </Link>
                 
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span   span="true" className="navbar-toggler-icon"></span>
@@ -32,7 +37,6 @@ export class Navbar extends Component {
                         <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
                         <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
-
                         <li className="nav-item"><Link className="nav-link" to="/about">About Us</Link></li>
                     </ul>
                 </div>
@@ -41,14 +45,6 @@ export class Navbar extends Component {
                     <input className="form-check-input" onClick={()=>{this.props.toggleMode(null)}} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
                     <label className="form-check-label" htmlFor="flexSwitchCheckDefault">{this.props.mode==='light'?"Enable Dark Mode":"Enable Light Mode"}</label>
                 </div>
-
-                <Link className="navbar-brand" to="/">
-                    <div className='d-flex'>
-                    
-                        <img className="border border-dark rounded-circle mx-2" src="/android-chrome-512x512.png" alt="NewsRaptor" width="50" height="50"/>
-                        <h1><strong>NewsRaptor</strong></h1>
-                    </div>
-                </Link>
             </div>
         </nav>
       </div>

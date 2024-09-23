@@ -2,39 +2,14 @@ import React, { Component } from "react";
 
 
 export class About extends Component {
-// export default function About(props) {
-    // const [this.myStyle, setMyStyle] = useState({
-    //     color: 'black',
-    //     backgroundColor: 'white'
-    // })
 
-    // const [btnText, setBtnText] = useState("Enable dark mode")
-
-    // const toggleStyle = () => {
-    //     if(this.myStyle.color === 'black') {
-    //       setMyStyle({
-    //         color: 'white',
-    //         backgroundColor: 'black',
-    //         border: '1px solid white'
-    //       })
-    //       setBtnText('Enable light mode')  
-
-    //     } else {
-    //         setMyStyle({
-    //             color: 'black',
-    //             backgroundColor: 'white'
-    //           })  
-    //         setBtnText('Enable dark mode')  
-    //     }    
-    // }
-
-    myStyle = {
+  myStyle = {
       color: this.props.mode === 'dark'?'white':'#042743',
       backgroundColor: this.props.mode === 'dark'?'rgb(36 74 104)':'white'
     }
 
-
 render () {
+
     return (
       <div className="container">
         <h1 className="container my-3" style={{color: this.props.mode === 'dark'?'white':'#042743'}}>About Us</h1>
