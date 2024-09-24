@@ -458,15 +458,13 @@ export class News extends Component {
   };
 
   fetchMoreData = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page+1}&pageSize=${this.props.pageSize}`;
     this.setState({ page: this.state.page + 1 });
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-    // this.setState({ loading: true });
     let data = await fetch(url);
     let parsedData = await data.json();
     this.setState({
       articles: this.state.articles.concat(parsedData.articles),
       totalResults: parsedData.totalResults,
-    //   loading: false,
     })
   }
 
@@ -474,7 +472,7 @@ export class News extends Component {
     return (
       <>
         <h1 className={`text-center text-${ this.props.mode === "light" ? "dark" : "light"}`}
-          style={{ margin: "35px 0px" }}
+          style={{ margin: "35px 0px", marginTop: '90px' }}
         >
           {" "}
           NewsRaptor - Top {this.capitalize(this.props.category)} Headlines
@@ -488,7 +486,7 @@ export class News extends Component {
                 <div className="container">    
                     <div className="row">
                         {this.state.articles.map((element) => {
-                            return (<div key={element.id + element.url + element.title} className="col-md-4">
+                            return (<div key={element.id + element.url + element.title + element.publishedAt} className="col-md-4">
                                 <NewsItem
                                     title={element.title ? element.title.slice(0, 45) : ""}
                                     description={element.description ? element.description.slice(0, 88) : ""}

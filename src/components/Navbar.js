@@ -15,7 +15,7 @@ export class Navbar extends Component {
   render() {
     return (
       <div>
-        <nav className={`navbar navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode} text-${this.props.mode==='light'?'dark':'light'}`}>
+        <nav className={`navbar fixed-top navbar-expand-lg navbar-${this.props.mode} bg-${this.props.mode} text-${this.props.mode==='light'?'dark':'light'}`}>
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">
                     <div className='d-flex'>

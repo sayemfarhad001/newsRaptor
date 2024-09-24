@@ -49,7 +49,7 @@ export default class App extends Component {
             <Route path="/science" element={<News setProgress={this.setProgress} key="science" pageSize={this.pageSize} apiKey={apiKey} category="science" mode={this.state.mode}/>}/>
             <Route path="/sports" element={<News setProgress={this.setProgress} key="sports" pageSize={this.pageSize} apiKey={apiKey} category="sports" mode={this.state.mode}/>}/>
             <Route path="/technology" element={<News setProgress={this.setProgress} key="technology" pageSize={this.pageSize} apiKey={apiKey} category="technology" mode={this.state.mode}/>}/>
-            <Route path="/about" element={<About setProgress={this.setProgress} mode={this.state.mode}/>}/> 
+            <Route path="/about" element={<About setProgress={this.setProgress} key="about" category="about" mode={this.state.mode}/>}/> 
           </Routes> 
         </Router>
       </>      

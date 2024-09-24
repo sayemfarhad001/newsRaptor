@@ -1,5 +1,5 @@
 // https://newsapi.org/
 
-let apiKey = "9310ad0003ca4692b5e71b179834b169";
+let apiKey = "3ef283c6259d47e590eaa91131977013";
 
 export default apiKey;

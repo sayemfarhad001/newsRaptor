@@ -2,6 +2,22 @@ import React, { Component } from "react";
 
 
 export class About extends Component {
+  constructor(props) {
+    super(props);
+    document.title = `${this.capitalize(props.category)} - NewsRaptor`;
+  }
+
+  capitalize = (string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+  
+  async componentDidMount() {
+    this.props.setProgress(50);
+    setTimeout(()=>{
+      this.props.setProgress(100);
+    }, 100)
+
+  }
 
   myStyle = {
       color: this.props.mode === 'dark'?'white':'#042743',
@@ -11,8 +27,10 @@ export class About extends Component {
 render () {
 
     return (
-      <div className="container">
-        <h1 className="container my-3" style={{color: this.props.mode === 'dark'?'white':'#042743'}}>About Us</h1>
+      <div className="container" style={{marginTop: '90px'}}>
+        <h1 className="container text-center my-3" style={{color: this.props.mode === 'dark'?'white':'#042743'}}>
+          NewsRaptor - {this.capitalize(this.props.category)} Us
+        </h1>
         <div className="accordion" id="accordionExample" style={this.myStyle}>
           <div className="accordion-item" style={this.myStyle}>
             <h2 className="accordion-header">
